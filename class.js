@@ -32,11 +32,29 @@ class ProductManager {
   }
 
   addProduct(productData) {
+    // Validar propiedades obligatorias
+    const requiredProperties = ['title', 'description', 'price', 'thumbnail', 'code', 'stock'];
+    for (const prop of requiredProperties) {
+      if (!productData[prop]) {
+        console.error(`Error: La propiedad "${prop}" es obligatoria.`);
+        return null;
+      }
+    }
+
+    // Verificar que el código no esté duplicado
+    const isCodeDuplicate = this.products.some(product => product.code === productData.code);
+    if (isCodeDuplicate) {
+      console.error(`Error: El código "${productData.code}" ya está en uso por otro producto.`);
+      return null;
+    }
+
+    // Crear el nuevo producto
     const newProduct = {
       id: this.productIdCounter++,
       ...productData,
     };
 
+    // Agregar el nuevo producto
     this.products.push(newProduct);
     this.saveProducts();
     console.log('Producto agregado:', newProduct);
