@@ -4,6 +4,8 @@ const ProductManager = require('./productManager')
 const app = express()
 let product = new ProductManager
 
+app.use(express.json())
+
 app.get('/', (req, res) => {
     res.send('Bienvenidos al ecommerce')
 })

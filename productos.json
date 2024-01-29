@@ -1,0 +1,20 @@
+[
+  {
+    "id": 2,
+    "title": "Mesa",
+    "description": "Mesa de madera",
+    "price": 25000,
+    "thumbnail": "imagen2.jpg",
+    "code": "A002",
+    "stock": 4
+  },
+  {
+    "id": 2,
+    "title": "Mesa",
+    "description": "Mesa de madera",
+    "price": 25000,
+    "thumbnail": "imagen2.jpg",
+    "code": "A002",
+    "stock": 4
+  }
+]
